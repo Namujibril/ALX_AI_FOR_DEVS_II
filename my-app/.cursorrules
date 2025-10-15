@@ -1,0 +1,175 @@
+# Cursor Rules for Next.js Polling Application
+
+## Project Context
+This is a Next.js 15 application with TypeScript, React 19, Tailwind CSS v4, and Supabase for authentication and data management. The app features a polling system with user authentication.
+
+## Technology Stack
+- **Framework**: Next.js 15 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **Database/Auth**: Supabase
+- **UI Components**: Radix UI primitives with custom components
+- **Forms**: React Hook Form with Zod validation
+- **Icons**: Lucide React
+
+## Code Style & Standards
+
+### TypeScript
+- Use strict TypeScript with proper type definitions
+- Prefer interfaces over types for object shapes
+- Use type guards and proper null checking
+- Avoid `any` type - use proper typing or `unknown`
+- Export types and interfaces when they might be reused
+
+### React & Next.js
+- Use React 19 features and patterns
+- Prefer function components with hooks
+- Use proper dependency arrays in useEffect
+- Implement proper error boundaries
+- Use Next.js App Router conventions
+- Leverage Server Components where appropriate
+- Use proper loading and error states
+
+### File Organization
+- Follow the existing structure: `src/app/`, `src/components/`, `src/lib/`, `src/contexts/`
+- Use descriptive file names with proper casing
+- Group related components in subdirectories
+- Keep components focused and single-responsibility
+
+### Component Guidelines
+- Create reusable, composable components
+- Use proper prop typing with TypeScript interfaces
+- Implement proper accessibility (ARIA labels, semantic HTML)
+- Use Tailwind CSS for styling with consistent design tokens
+- Prefer composition over inheritance
+
+### Styling (Tailwind CSS v4)
+- Use Tailwind utility classes for styling
+- Create custom components in `src/components/ui/`
+- Use CSS variables for theme customization
+- Implement responsive design with mobile-first approach
+- Use consistent spacing, colors, and typography scales
+
+### Authentication & Data
+- Use Supabase for authentication and data management
+- Implement proper error handling for auth operations
+- Use React Context for global auth state
+- Protect routes with authentication guards
+- Handle loading and error states for async operations
+
+### Forms & Validation
+- Use React Hook Form for form management
+- Implement Zod schemas for validation
+- Provide clear error messages and validation feedback
+- Use proper form accessibility practices
+
+### Performance
+- Implement proper code splitting
+- Use dynamic imports for heavy components
+- Optimize images and assets
+- Implement proper caching strategies
+- Use React.memo and useMemo when appropriate
+
+### Error Handling
+- Implement comprehensive error boundaries
+- Use proper error logging and monitoring
+- Provide user-friendly error messages
+- Handle network errors gracefully
+
+## Code Examples
+
+### Component Structure
+```typescript
+import React from 'react';
+import { cn } from '@/lib/utils';
+
+interface ComponentProps {
+  className?: string;
+  children: React.ReactNode;
+}
+
+export function Component({ className, children }: ComponentProps) {
+  return (
+    <div className={cn("default-classes", className)}>
+      {children}
+    </div>
+  );
+}
+```
+
+### Form with Validation
+```typescript
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
+
+const formSchema = z.object({
+  field: z.string().min(1, 'Field is required'),
+});
+
+type FormData = z.infer<typeof formSchema>;
+
+export function FormComponent() {
+  const form = useForm<FormData>({
+    resolver: zodResolver(formSchema),
+  });
+
+  const onSubmit = (data: FormData) => {
+    // Handle form submission
+  };
+
+  return (
+    <form onSubmit={form.handleSubmit(onSubmit)}>
+      {/* Form fields */}
+    </form>
+  );
+}
+```
+
+### Supabase Integration
+```typescript
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
+
+export async function fetchData() {
+  const supabase = createClientComponentClient();
+  
+  try {
+    const { data, error } = await supabase
+      .from('table')
+      .select('*');
+    
+    if (error) throw error;
+    return data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
+}
+```
+
+## Best Practices
+- Write self-documenting code with clear variable and function names
+- Add JSDoc comments for complex functions
+- Use consistent naming conventions (camelCase for variables, PascalCase for components)
+- Implement proper loading states and skeletons
+- Use semantic HTML elements
+- Ensure proper keyboard navigation
+- Test components in different screen sizes
+- Keep components small and focused
+- Use proper TypeScript strict mode settings
+- Implement proper error handling patterns
+
+## File Naming Conventions
+- Components: PascalCase (e.g., `PollCard.tsx`)
+- Utilities: camelCase (e.g., `utils.ts`)
+- Pages: lowercase with hyphens (e.g., `page.tsx`)
+- Types: PascalCase with descriptive names (e.g., `PollData.ts`)
+
+## Import Organization
+1. React and Next.js imports
+2. Third-party library imports
+3. Internal component imports
+4. Type imports
+5. Relative imports
+
+Always use absolute imports for internal modules (e.g., `@/components/ui/button`).
