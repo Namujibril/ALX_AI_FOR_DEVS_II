@@ -1,5 +1,7 @@
 'use client'
 
+/** Dashboard page showing actions and the current user's polls with edit/delete. */
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import withAuth from "@/components/withAuth"

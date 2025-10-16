@@ -1,3 +1,4 @@
+/** Renders a selectable poll option or a results bar when `showResults` is set. */
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 

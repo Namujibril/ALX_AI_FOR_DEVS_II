@@ -1,3 +1,4 @@
+/** Server page listing all polls from Supabase with links to detail pages. */
 import { supabase } from "@/lib/supabase"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"

@@ -1,3 +1,4 @@
+/** Server page that assembles a poll with aggregated vote counts. */
 import { supabase } from "@/lib/supabase"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import Poll from "@/components/polls/Poll"

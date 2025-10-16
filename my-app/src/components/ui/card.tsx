@@ -1,4 +1,5 @@
 import * as React from "react"
+/** Basic card primitives used for grouping content in panels. */
 
 import { cn } from "@/lib/utils"
 

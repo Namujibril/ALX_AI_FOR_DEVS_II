@@ -1,5 +1,10 @@
 'use client'
 
+/**
+ * Visualizes poll options as horizontal bars with vote counts/percentages.
+ * Pure client component; accepts data and renders using Tailwind CSS.
+ */
+
 import { cn } from "@/lib/utils"
 
 export type PollOptionResult = {

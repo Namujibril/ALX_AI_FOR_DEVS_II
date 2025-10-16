@@ -1,5 +1,7 @@
 'use client'
 
+/** HOC that redirects unauthenticated users to the login page. */
+
 import { useAuth } from '@/contexts/AuthContext'
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'

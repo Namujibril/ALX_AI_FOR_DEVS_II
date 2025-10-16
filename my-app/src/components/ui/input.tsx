@@ -1,4 +1,5 @@
 import * as React from "react"
+/** Styled input component used across forms. */
 
 import { cn } from "@/lib/utils"
 

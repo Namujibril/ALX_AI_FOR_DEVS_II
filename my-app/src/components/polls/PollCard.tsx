@@ -1,3 +1,6 @@
+/**
+ * Compact card view for a poll, showing title, meta, and link to detail.
+ */
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"

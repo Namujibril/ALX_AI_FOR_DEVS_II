@@ -1,5 +1,7 @@
 'use client'
 
+/** Create Poll page: builds a new poll with at least two options. */
+
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Button } from "@/components/ui/button"

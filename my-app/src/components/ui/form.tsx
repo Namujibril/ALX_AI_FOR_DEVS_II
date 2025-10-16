@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+/** Form helpers and primitives consistent with the app's design system. */
 import * as LabelPrimitive from "@radix-ui/react-label"
 import { Slot } from "@radix-ui/react-slot"
 import {

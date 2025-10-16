@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+/**
+ * Root layout applied to all routes: sets fonts, header, and auth context.
+ */
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";

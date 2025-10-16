@@ -1,5 +1,7 @@
 'use client'
 
+/** Profile page showing basic account fields and sign-out action. */
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"

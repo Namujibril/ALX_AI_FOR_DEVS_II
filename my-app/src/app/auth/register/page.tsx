@@ -1,5 +1,7 @@
 'use client'
 
+/** Sign-up page creating a new Supabase user and storing profile data. */
+
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"

@@ -1,4 +1,7 @@
 // Database types for the polling app
+/**
+ * Strongly-typed shapes used when reading/writing polls and options.
+ */
 
 export interface PollOption {
   id: string;

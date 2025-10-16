@@ -1,5 +1,7 @@
 'use client'
 
+/** Sign-in page using Supabase email/password authentication. */
+
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
