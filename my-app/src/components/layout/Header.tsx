@@ -1,5 +1,10 @@
 'use client'
 
+/**
+ * Top navigation header shown across the app. Displays primary nav links
+ * and authentication actions based on current user state.
+ */
+
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { usePathname } from "next/navigation"

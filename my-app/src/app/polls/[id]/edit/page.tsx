@@ -1,5 +1,10 @@
 'use client'
 
+/**
+ * Edit Poll page: fetches an existing poll, allows editing the title and options,
+ * and persists updates to Supabase. Route is protected by `withAuth`.
+ */
+
 import { useEffect, useState } from 'react'
 import { useRouter, useParams } from 'next/navigation'
 import Link from 'next/link'

@@ -1,5 +1,10 @@
 'use client'
 
+/**
+ * Provides authenticated user session and sign-out functionality via Supabase.
+ * Wrap your app with `AuthProvider` and consume with `useAuth()`.
+ */
+
 import { createContext, useContext, useEffect, useState } from 'react'
 import { Session, User } from '@supabase/supabase-js'
 import { supabase } from '@/lib/supabase'

@@ -1,5 +1,10 @@
 'use client'
 
+/**
+ * Displays a single poll, allowing a user to cast a vote and view results.
+ * Accepts an initial poll shape with options and handles optimistic voting.
+ */
+
 import { supabase } from "@/lib/supabase"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
